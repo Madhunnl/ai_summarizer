@@ -4,7 +4,8 @@ import streamlit as st
 from openai import OpenAI
 
 load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
+api_key = st.secrets.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
+
 
 st.set_page_config(page_title="AI Text Summarizer", page_icon="🧠")
 st.title("🧠 AI Text Summarizer")

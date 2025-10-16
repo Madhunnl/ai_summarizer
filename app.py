@@ -9,6 +9,18 @@ api_key = st.secrets.get("OPENAI_API_KEY") or os.getenv("OPENAI_API_KEY")
 
 st.set_page_config(page_title="AI Text Summarizer", page_icon="🧠")
 st.title("🧠 AI Text Summarizer")
+# Sidebar info
+st.sidebar.header("About this App")
+st.sidebar.info(
+    """
+    This app uses **OpenAI's GPT-4o-mini** model to generate concise summaries of any text.  
+    Adjust the tone and target length for tailored results.  
+    ---
+    **Built by:** [Nikhil Madhunala](https://nikhilmadhunala.github.io/nikhil-ai-portfolio/)  
+    💼 *AI Systems Engineer — Exploring LLMs, Agents, and MLOps*  
+    📧 [Email me](mailto:nikhilmadhunala@gmail.com)
+    """
+)
 
 if not api_key:
     st.warning("Add your OPENAI_API_KEY in the .env file to run this app.")
